@@ -1,0 +1,15 @@
+.modal_body-btn-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: red;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.modal_body-btn-close:hover {
+  filter: drop-shadow(0 0 2px red);
+  transform: scale(1.003);
+}

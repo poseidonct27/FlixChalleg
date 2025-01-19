@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+:root {
+  --cl-primary: #ca4c40ff;
+  --cl-bg-primary: #202020ff;
+
+  --cl-green: #00c86f;
+  --cl-blue: #277ae8ff;
+  --cl-yellow: #ffba05;
+
+  --cl-font-dark: #ccccc9;
+  --font-montserrat: 'Montserrat', sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
+}
+
+#root {
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-montserrat);
+  font-optical-sizing: auto;
+  background-color: var(--cl-bg-primary);
+  color: var(--cl-font-dark);
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.font-oswald {
+  font-family: var(--font-oswald);
+}
+
+a {
+  color: var(--cl-font-dark);
+  text-decoration: none;
+}
+
+pre {
+  text-wrap: wrap;
+  font-size: 1rem;
+  font-family: var(--font-montserrat);
+  opacity: 0.9;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 1rem;
+}
+
+.footer__author {
+  display: block;
+  font-size: 0.8rem;
+  padding: 1rem;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.footer__author a {
+  background-image: linear-gradient(to bottom, var(--cl-primary), white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.4);
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(3px);
+}
+
+.modal_body {
+  background-color: var(--cl-bg-primary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 95%;
+  max-height: 80dvh;
+  overflow-y: auto;
+}
+
+.modal_body-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.modal_body-content {
+  padding: 1rem 0;
+}
+
+.modal_body-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button_ok,
+.button_cancel {
+  text-transform: uppercase;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-radius: 0.4rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.button_ok {
+  border-color: var(--cl-primary);
+  color: var(--cl-primary);
+  background-color: transparent;
+  box-shadow: inset 0 0 0 0 var(--cl-primary);
+}
+
+.button_ok:enabled:hover {
+  color: white;
+  box-shadow:
+    inset 400px 0 0 0 var(--cl-primary),
+    1px 1px 4px var(--cl-primary);
+  transform: scale(1.03);
+}
+
+.button_ok:disabled {
+  cursor: not-allowed;
+}
+
+.button_cancel {
+  border-color: gray;
+  color: gray;
+  background-color: transparent;
+  box-shadow: inset 0 0 0 0 gray;
+}
+
+.button_cancel:hover {
+  color: white;
+  box-shadow:
+    inset -400px 0 0 0 gray,
+    1px 1px 4px gray;
+  transform: scale(0.98);
+}
+
+@media (min-width: 1080px) {
+  .modal_body {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding-bottom: 5rem;
+  }
+}
